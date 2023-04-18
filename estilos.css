@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    /*DARK BLUE*/
+    --dark-blue-100: #609ED4;
+    --dark-blue-200: #356EA9;
+    --dark-blue-300: #0A3871;
+    --dark-blue-400: #072B61;
+    --dark-blue-500: #052051;
+
+    /*LIGHT BLUE*/
+    --light-blue-100: #F3F5FC;
+    --light-blue-200: #EFF1FA;
+    --light-blue-300: #E9ECF8;
+    --light-blue-400: #AAB2D5;
+    --light-blue-500: #757FB2;
+
+    /*GRAY*/
+    --gray-100: #CED4DA;
+    --gray-200: #ADB5BD;
+    --gray-300: #868E96;
+    --gray-400: #495057;
+    --gray-500: #343A40;
+
+    /*DARK THEME*/
+    --dark-1: #18191a;
+    --dark-2: #242526;
+    --dark-3: #1f1f20;
+}
+
+body{
+    background-color: var(--light-blue-500);
+    display: flex;
+    height: 100vh;
+    transition: all .3s ease;
+}
+
+body.dark{
+    background-color: var(--dark-1);
+}
+
+.contenedor{
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    gap: 2rem;
+}
+
+.caja{
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 1px 5px 10px rgba(127, 125, 125, 0.5);
+}
+
+.caja-texto{
+    position: relative;
+    background-color: var(--light-blue-300);
+    flex: 2 0 60%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.caja-texto div:first-child{
+
+    flex: 2 0 75%;
+}
+
+.titulo{
+    font-size: 30px;
+    color: var(--dark-blue-300);
+}
+
+textarea{
+    background-color: unset;
+    color: var(--dark-blue-300);
+    width: 100%;
+    height: 220px;
+    margin-top: 1rem;
+    font-size: 22px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+textarea::placeholder{
+    color: var(--dark-blue-300);
+    font-weight: 400;
+}
+
+.caja-texto div:last-child{
+    flex: 1 0 25%;
+    padding-top: 1rem;
+}
+
+.mensaje-error{
+    font-size: 13px;
+    color: var(--gray-400);
+    display: flex;
+    align-items: center;
+}
+
+.mensaje-error.active{
+    color: rgb(219, 54, 54);
+    animation: shake 0.7s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    10% {
+      transform: translateX(-2px) rotate(0.5deg);
+    }
+    20% {
+      transform: translateX(2px) rotate(-0.5deg);
+    }
+    30% {
+      transform: translateX(-1px) rotate(0.25deg);
+    }
+    40% {
+      transform: translateX(1px) rotate(-0.25deg);
+    }
+    50% {
+      transform: translateX(-0.5px) rotate(0.1deg);
+    }
+    60% {
+      transform: translateX(0.5px) rotate(-0.1deg);
+    }
+    70% {
+      transform: translateX(-0.25px) rotate(0.05deg);
+    }
+    80% {
+      transform: translateX(0.25px) rotate(-0.05deg);
+    }
+    90% {
+      transform: translateX(-0.1px) rotate(0.02deg);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+.botones-caja {
+    display: flex;
+    gap: 1.5rem;
+}
+
+button{
+    border: none;
+    border-radius: 20px;
+    padding: 1.2rem 0;
+    cursor: pointer;
+    font-size: 15px;
+    transition: .3s ease;
+}
+
+button:active{
+    transform: scale(.7);
+}
+
+.botones-caja button{
+    flex-basis: 50%;
+}
+
+.botones-caja button:first-child{
+    background-color: var(--dark-blue-300);
+    color: var(--light-blue-100);
+}
+
+.botones-caja button:last-child{
+    background-color: unset;
+    color: var(--dark-blue-300);
+    border: 1px solid var(--dark-blue-300);
+}
+
+.caja-resultado{
+    background-color: var(--light-blue-100);
+    flex: 1 0 30%;
+}
+
+
+
+.caja-resultado-img{
+    width: 100%;
+    text-align: center;
+}
+
+.caja-resultado-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caja-resultado-texto p:first-child{
+    font-size:20px ;
+    font-weight: 500;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.caja-resultado-texto p:last-child{
+    font-size:15px ;
+    font-weight: 400;
+    text-align: center;
+}
+
+.btnCopiar{
+    position: relative;
+    width: 100%;
+    background-color: unset;
+    border: 1px solid var(--dark-blue-300);
+    color: var(--dark-blue-300);
+    visibility: hidden;
+    margin-bottom: 1rem;
+}
+
+.btnCopiar.active{
+    visibility: visible;
+}
+
+.toggle{
+    position: absolute;
+    top: 3vh;
+    right: 3vh;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-blue-100);
+    box-shadow: 1px 5px 8px rgba(125, 123, 123, 0.5);
+    cursor: pointer;
+}
+
+.toggle i{
+    position: absolute;
+    font-size: 30px;
+    color: var(--dark-blue-300);
+    transition: .2s ease;
+}
+
+.sun{
+    opacity: 0;
+}
+
+body.dark .sun{
+    opacity: 1;
+}
+
+body.dark .moon{
+    opacity: 0;
+}
+
+body.dark .caja{
+    background-color: var(--dark-2);
+    box-shadow:none;
+}
+
+body.dark .toggle{
+    box-shadow: none;
+    background-color: var(--dark-2);
+}
+
+body.dark .toggle i{
+    color: var(--gray-100);
+}
+
+body.dark .titulo{
+    color: var(--light-blue-300);
+}
+
+body.dark textarea,
+body.dark textarea::placeholder{
+    color: var(--light-blue-200);
+}
+
+body.dark .mensaje-error{
+    color: var(--gray-100);
+}
+
+body.dark .mensaje-error.active{
+    color: rgb(219, 54, 54);
+}
+
+body.dark .caja-resultado-texto p{
+    color: var(--light-blue-200);
+}
+
+body.dark .caja-resultado .encriptadoDesencriptado{
+    color: var(--light-blue-200) !important;
+}
+
+body.dark .botones-caja button:first-child{
+    background-color: var(--light-blue-300);
+    color: var(--dark-blue-300);
+    font-weight: 500;
+}
+
+body.dark .btnCopiar,
+body.dark .botones-caja button:last-child{
+    border: 1px solid var(--light-blue-300);
+    color: var(--light-blue-300);
+}
+
+@media screen and (max-width:768px) {
+    .caja-resultado-img{display: none;}
+
+    .contenedor{
+        
+        flex-direction: column;
+    }
+
+    .caja-texto{
+        margin-top: 50px;
+    }
+
+    .caja-resultado{
+        margin-bottom: 50px;
+    }
+    
+}
+
+@media screen and (max-width:425px) {
+    .titulo{
+        text-align: start;
+        font-size: 25px;
+    }
+
+    textarea{
+        font-size: 18px;
+    }
+    
+    .botones-caja{flex-direction: column;}
+
+    .mensaje-error{
+        font-size: 12px;
+        text-align: center;
+    }
+
+}
+
+footer{
+    margin-top: 15px;
+   text-align: center; 
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="img/icono.jpg">
+    <title>Encriptador-Desencriptador</title>
+</head>
+<body>
+    <section class="contenedor"><!--Cajas-->
+        <article class="caja caja-texto"><!--Caja para ingresar el texto-->
+            <div>
+                <h1 class="titulo">Encriptador de texto</h1>
+                <textarea cols="30" rows="10" id="textoIngresado" placeholder="Ingrese el texto aqui"></textarea>
+            </div>
+            <div>
+                <p class="mensaje-error"><i class='bx bxs-error-circle'></i>Solo letras minusculas y sin acentos</p>
+                <div class="botones-caja"><!--Botones-->
+                    <button class="btnEncriptar">Encriptar</button>
+                    <button class="btnDesencriptar">Desencriptar</button>
+                </div>
+            </div>
+
+            <footer>
+                <p>Hecho por Roberto Padilla 2023</p>
+            </footer>
+
+        </article>
+
+        <article class="caja caja-resultado"><!--Caja para el resultado-->
+            <div class="caja-resultado2">
+                <figure class="caja-resultado-img">
+                    <img src="img/img.png" alt="img">
+                </figure>
+                <div class="caja-resultado-texto">
+                    <p>Ningún mensaje fue encontrado</p>
+                    <p>Favor de ingresar el texto que desees encriptar o desencriptar.</p>
+                </div>
+            </div>
+            <button class="btnCopiar">Copiar</button>
+        </article>
+    </section>
+
+    <div class="toggle">
+        <i class='bx bxs-moon icon moon'></i>
+        <i class='bx bxs-sun icon sun'></i>
+    </div>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
