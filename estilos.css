@@ -313,6 +313,10 @@ body.dark .botones-caja button:last-child{
     color: var(--light-blue-300);
 }
 
+body.dark footer{
+    color: var(--light-blue-300);
+}
+
 @media screen and (max-width:768px) {
     .caja-resultado-img{display: none;}
 
